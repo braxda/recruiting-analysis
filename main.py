@@ -1,16 +1,24 @@
-# This is a sample Python script.
+import pandas as pd
+import cfbd
+from cfbd.rest import ApiException
+from config import API_KEY
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+#setup api connect
+configuration = cfbd.Configuration()
+configuration.api_key['Authorization'] = API_KEY
+configuration.api_key_prefix['Authorization'] = 'Bearer'
+recruiting_api = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
 
+try:
+    recruits = recruiting_api.get_recruiting_players(
+        year = 2023,
+        team = "Michigan"
+    )
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+    if recruits:
+        print(f"Recruits found: {len(recruits)}")
+        print(f"Recruits name, position, and stars: {recruits[0].name}, {recruits[0].position}, {recruits[0].stars}")
 
+except ApiException as e:
+    print(f"Error: {e}")
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
