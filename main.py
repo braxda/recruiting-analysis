@@ -17,8 +17,30 @@ try:
 
     if recruits:
         print(f"Recruits found: {len(recruits)}")
-        print(f"Recruits name, position, and stars: {recruits[0].name}, {recruits[0].position}, {recruits[0].stars}")
+
+        recruit_list = []
+
+        for recruit in recruits:
+            recruit_info = {
+            "name": recruit.name,
+            "position": recruit.position,
+            "year": recruit.year,
+            "stars": recruit.stars,
+            "Team": recruit.committed_to,
+            "height": recruit.height,
+            "weight": recruit.weight,
+            "city": recruit.city,
+            "state": recruit.state_province,
+            "country": recruit.country,
+            "high_school": recruit.school
+            }
+            recruit_list.append(recruit_info)
+
+            #create dataframe for recruit list
+            df = pd.DataFrame(recruit_list)
+
+        print("\n Michigan 2023 Recruits:")
+        print(df)
 
 except ApiException as e:
     print(f"Error: {e}")
-
