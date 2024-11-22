@@ -4,55 +4,13 @@ from cfbd.rest import ApiException
 from config import API_KEY
 
 def api_setup():
-    """ configure the players and recruiting APIs"""
+    """ configure the teams api"""
     configuration = cfbd.Configuration()
     configuration.api_key['Authorization'] = API_KEY
     configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-    recruiting_api = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
     teams_api = cfbd.TeamsApi(cfbd.ApiClient(configuration))
-
-
-    return teams_api, recruiting_api
-
-def get_recruits(recruiting_api, team):
-    """this endpoint contains data on player star ratings"""
-    try:
-        recruit_list = []
-
-        for year in range (2018, 2024):
-            print(f"getting {year} recruits...")
-            recruits = recruiting_api.get_recruiting_players(
-                year=year,
-                team=team
-            )
-            if not recruits:
-                print(f"Recruits for {team}, {year} could not be found")
-                continue
-
-            for recruit in recruits:
-                recruit_info = {
-                "id": recruit.id,
-                "athlete_id": recruit.athlete_id,
-                "name": recruit.name,
-                "committed_to": recruit.committed_to,
-                "height": recruit.height,
-                "weight": recruit.weight,
-                "year": recruit.year,
-                "position": recruit.position,
-                "hometown": recruit.city,
-                "state": recruit.state_province,
-                "country": recruit.country,
-                "stars": recruit.stars
-                }
-                recruit_list.append(recruit_info)
-
-        df = pd.DataFrame(recruit_list)
-        return df
-
-    except ApiException as e:
-        print(f"Error getting recruiting data for {team}: {e}")
-        return pd.DataFrame()
+    return teams_api
 
 def get_roster(teams_api, team, year):
     """"pull relevant roster data for 2023. recruit_ids are incomplete"""
@@ -68,45 +26,34 @@ def get_roster(teams_api, team, year):
             "id": player.id,
             "name": player.first_name + " " + player.last_name,
             "team": player.team,
-            "recruit_id": player.recruit_ids
+            "height": player.height,
+            "weight": player.weight,
+            "year": player.year,
+            "position": player.position,
+            "hometown": player.home_city,
+            "state": player.home_state,
+            "country": player.home_country,
             }
             roster_list.append(player_info)
 
         df = pd.DataFrame(roster_list)
+        print(df)
         return df
     except ApiException as e:
         print(f"Error getting roster data for {team}: {e}")
         return pd.DataFrame()
 
-def compare_names(roster_df, recruits_df):
-    """match players based on names"""
-    # clean name data
-    roster_df['clean_name'] = roster_df['name'].str.lower().str.strip()
-    recruits_df['clean_name'] = recruits_df['name'].str.lower().str.strip()
-
-    # look for exact matches
-    exact_match = pd.merge(
-        roster_df[['name', 'id', 'clean_name']],
-        recruits_df[['name', 'athlete_id', 'clean_name', 'stars', 'committed_to']],
-        on = 'clean_name',
-        suffixes = ('_roster', '_recruit')
-    )
-    print(exact_match[['name_roster', 'name_recruit', 'stars', 'committed_to']])
-
-    # now check the names of the players who didnt match, i have a suspiscision its going to be players that transferred to the school
-    matched_players = exact_match['clean_name']
-    unmatched_players = roster_df[~roster_df['clean_name'].isin(matched_players)]
-    print("players with no match in name")
-    print(unmatched_players[['name']].sort_values('name'))
-
 def main():
-    teams_api, recruiting_api = api_setup()
-    team = "Michigan"
+    teams_api = api_setup()
     year = 2023
-    recruits_df = get_recruits(recruiting_api, team)
-    roster_df = get_roster(teams_api, team, year)
+    playoff_teams = ["Michigan", "Washington", "Texas", "Alabama"]
 
-    compare_names(roster_df, recruits_df)
+    for team in playoff_teams:
+        roster_df = get_roster(teams_api, team, year)
+        if not roster_df.empty:
+            filename = f"{team.lower()}_roster_2023.csv"
+            roster_df.to_csv(filename, index=False)
+            print(f"saved {filename}")
 
 if __name__ == "__main__":
     main()

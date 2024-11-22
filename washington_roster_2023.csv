@@ -1,0 +1,120 @@
+id,name,team,height,weight,year,position,hometown,state,country
+4360423,Michael Penix Jr.,Washington,75,213,4,QB,Tampa,FL,USA
+4361094,Dominique Hampton,Washington,75,220,4,CB,Glendale,AZ,USA
+4361095,Richard Newton,Washington,72,223,4,RB,Lancaster,CA,USA
+4361100,Jack Westover,Washington,75,248,4,TE,Bellevue,WA,USA
+4361105,Zion Tupuola-Fetui,Washington,76,254,4,DE,Pearl City,HI,USA
+4361107,Ulumoo Ale,Washington,78,327,4,DL,Tacoma,WA,USA
+4361109,Matteo Mele,Washington,78,298,4,OL,Tucson,AZ,USA
+4361112,Devin Culp,Washington,76,237,4,TE,Spokane,WA,USA
+4361113,Tuli Letuligasenoa,Washington,73,292,4,DL,Concord,CA,USA
+4374280,Edefuan Ulofoshio,Washington,73,236,4,LB,Anchorage,AK,USA
+4426352,Jacob Bandes,Washington,75,307,4,DL,Pittsburg,CA,USA
+4426380,Faatui Tuitele,Washington,75,317,3,DL,Honolulu,HI,USA
+4426821,Julius Buelow,Washington,80,315,4,OL,Kapolei,HI,USA
+4427160,Kamren Fabiculanan,Washington,73,200,4,S,Camarillo,CA,USA
+4427170,Troy Fautanu,Washington,76,317,3,OL,Henderson,NV,USA
+4427219,Drew Fowler,Washington,73,222,4,LB,Bellevue,WA,USA
+4427294,Ralen Goforth,Washington,74,237,4,LB,Long Beach,CA,USA
+4427569,Giles Jackson,Washington,69,187,4,WR,Antioch,CA,USA
+4427676,Nate Kalepo,Washington,78,325,4,OL,Renton,WA,USA
+4428713,Bralen Trice,Washington,76,274,3,DE,Phoenix,AZ,USA
+4428726,Alphonzo Tuputala,Washington,74,230,4,LB,Federal Way,WA,USA
+4429089,Geirean Hatchett,Washington,77,312,4,OL,Ferndale,WA,USA
+4429186,Sam Adams II,Washington,74,212,3,RB,Kirkland,WA,USA
+4429490,Carson Bruener,Washington,74,226,4,LB,Woodinville,WA,USA
+4429694,Makell Esteen,Washington,73,202,3,S,Hawthorne,CA,USA
+4430565,Will Nixon,Washington,71,202,3,RB,Waco,TX,USA
+4430616,Asa Turner,Washington,75,210,4,DB,Carlsbad,CA,USA
+4430637,Ja'Lynn Polk,Washington,74,204,2,WR,Lufkin,TX,USA
+4430810,Daniyel Ngata,Washington,69,191,4,RB,Folsom,CA,USA
+4430834,Jalen McMillan,Washington,73,192,3,WR,Fresno,CA,USA
+4430876,Roger Rosengarten,Washington,78,300,2,OL,Highlands Ranch,CO,USA
+4431264,Gaard Memmelaar,Washington,76,299,3,OL,Caldwell,ID,USA
+4431299,Rome Odunze,Washington,75,215,3,WR,Las Vegas,NV,USA
+4432440,Jabbar Muhammad,Washington,70,183,4,DB,Desoto,TX,USA
+4432466,Samuel Peacock,Washington,78,296,2,OL,Gig Harbor,WA,USA
+4569594,Cameron Davis,Washington,72,214,4,RB,Bryant,AR,USA
+4569598,Dylan Morris,Washington,73,202,4,QB,Puyallup,WA,USA
+4569600,Mishael Powell,Washington,73,210,4,DB,Seattle,WA,USA
+4574713,Jaden Green,Washington,71,214,3,LS,Gilbert,AZ,USA
+4575923,Elijah Jackson,Washington,73,193,3,CB,Carson,CA,USA
+4581579,Sekai Asoau-Afoa,Washington,76,263,4,DE,Tacoma,WA,USA
+4588194,Dyson McCutcheon,Washington,71,182,3,DB,Claremont,CA,USA
+4683138,Voi Tunuufi,Washington,73,282,4,EDGE,South Jordan,UT,USA
+4683181,Robert Wyrsch,Washington,79,293,2,OL,Capitola,CA,USA
+4683386,William Haskell,Washington,76,200,2,QB,Glendale,AZ,USA
+4683554,Darren Barkins,Washington,71,169,3,CB,Spring Valley,CA,USA
+4684069,Maurice Heims,Washington,77,263,3,EDGE,Hamburg,,Germany
+4685261,Germie Bernard,Washington,73,209,3,WR,Henderson,NV,USA
+4685322,Tristan Dunn,Washington,76,191,2,S,Sumner,WA,USA
+4685506,Ryan Otton,Washington,78,257,2,TE,Tumwater,WA,USA
+4689338,Dillon Johnson,Washington,72,218,3,RB,Greenville,MS,USA
+4691142,Vincent Nunley,Washington,73,187,2,S,Oakland,CA,USA
+4696013,Adam Saul,Washington,78,192,3,P,Gurnee,IL,USA
+4697671,Bradley McGannon,Washington,76,283,2,DL,Yelm,WA,USA
+4697673,Addison Shrock,Washington,73,188,2,PK,Bellingham,WA,USA
+4816090,Parker Brailsford,Washington,74,290,2,OL,Mesa,AZ,USA
+4816097,Lance Holtzclaw,Washington,75,224,2,EDGE,Dorchester,MA,USA
+4832800,Denzel Boston,Washington,76,209,2,WR,South Hill,WA,USA
+4868898,Jalen Klemm,Washington,78,285,2,OL,Mars,PA,USA
+4870758,Anthony James,Washington,77,272,1,DE,Lavon,TX,USA
+4870905,Caleb Presley,Washington,72,177,1,CB,Federal Way,WA,USA
+4870915,Curley Reed III,Washington,73,191,1,CB,Iowa,LA,USA
+4871068,Rashid Williams,Washington,73,181,1,WR,Brentwood,CA,USA
+4875340,Davon Banks,Washington,71,184,3,CB,San Jacinto,CA,USA
+4875341,Camden Sirmon,Washington,72,196,3,WR,Missoula,MT,USA
+4875346,Mason Wheeler,Washington,69,173,3,WR,Vancouver,WA,USA
+4875348,Milton Hopkins Jr.,Washington,76,232,3,EDGE,Seattle,WA,USA
+4875350,Quentin Moore,Washington,76,257,4,TE,Kenmore,WA,USA
+4875351,Griffin Waiss,Washington,77,245,3,TE,San Jose,CA,USA
+4876132,Josh Cuevas,Washington,75,251,3,TE,Los Angeles,CA,USA
+4880856,Alex Froelich,Washington,74,213,2,LS,South Pasadena,CA,USA
+4880858,Jake Jennings,Washington,76,229,3,EDGE,Gig Harbor,WA,USA
+4890418,Teddy Purcell,Washington,73,186,3,QB,Atherton,CA,USA
+4890419,Jack McCallister,Washington,72,205,3,P,Edmonds,WA,USA
+4890430,Antonio Hill,Washington,71,188,4,CB,Bellevue,WA,USA
+4910844,Grady Gross,Washington,71,218,3,PK,Scottsdale,AZ,USA
+4916379,Jayvon Parker,Washington,75,297,3,DL,Detroit,MI,USA
+4916380,Armon Parker,Washington,75,312,2,DL,Detroit,MI,USA
+4917046,Jay Green,Washington,75,208,3,S,Houston,TX,USA
+4918439,Elinneus Davis,Washington,74,309,1,DL,Moorhead,MN,USA
+4921406,Landen Hatchett,Washington,74,310,2,OL,Ferndale,WA,USA
+4921520,Tybo Rogers,Washington,71,185,1,RB,Bakersfield,CA,USA
+4923048,Deven Bryant,Washington,71,234,1,LB,Carson,CA,USA
+4923287,Elishah Jackett,Washington,79,271,1,OL,Orange,CA,USA
+4940235,Taeshaun Lyons,Washington,73,177,1,WR,Hayward,CA,USA
+4954503,Jordan Whitney,Washington,72,216,1,LB,Oxnard,CA,USA
+4988081,Vincent Holmes,Washington,72,187,1,S,San Jacinto,CA,USA
+5017177,Keith Reynolds,Washington,69,180,1,WR,Adelanto,CA,USA
+5077303,Jacob Lane,Washington,77,255,2,EDGE,Puyallup,WA,USA
+5077669,Diesel Gordon,Washington,72,164,1,S,Arlington,TX,USA
+5077875,Zachary Henning,Washington,77,299,1,OL,Centennial,CO,USA
+5078347,Soane Faasolo,Washington,80,295,1,OL,East Palo Alto,CA,USA
+5078420,Leroy Bryant,Washington,71,180,1,CB,Fairfield,CA,USA
+5079508,Austin Mack,Washington,78,236,1,QB,Folsom,CA,USA
+5082670,Jakson Berman,Washington,71,190,2,CB,San Jose,CA,USA
+5082671,Tristan Warner,Washington,73,206,2,S,Tacoma,WA,USA
+5082672,Anay Nagarajan,Washington,71,190,3,CB,San Jose,CA,USA
+5082673,Austin Harnetiaux,Washington,75,232,2,LB,Seattle,WA,USA
+5082675,Griffin Miller,Washington,74,227,2,LB,Sammamish,WA,USA
+5082676,Jake Parnagian,Washington,70,204,2,WR,Clovis,CA,USA
+5082677,Jackson Girouard,Washington,72,193,3,WR,Redwood City,CA,USA
+5082678,John Frazier,Washington,78,244,2,TE,Mountain View,CA,USA
+5084987,Kahlee Tafai,Washington,77,338,1,OL,Los Angeles,CA,USA
+5085885,Braydon Bruener,Washington,72,194,1,LB,Redmond,WA,USA
+5095358,Caleb Johnston,Washington,71,221,2,LS,Ripon,CA,USA
+5095359,Camdyn Stiegeler,Washington,73,203,1,QB,Oregon City,OR,USA
+5121433,Zach Durfee,Washington,77,256,4,EDGE,Dawson,MN,USA
+5122374,Owen Coutts,Washington,76,230,3,TE,Seattle,WA,USA
+5151880,Thaddeus Dixon,Washington,73,186,4,CB,Los Angeles,CA,USA
+5151881,Alex Johnson,Washington,78,214,3,QB,Seattle,WA,USA
+5151882,Ryder Bumgarner,Washington,69,195,1,RB,Stanwood,WA,USA
+5151883,Luke Luchini,Washington,73,195,1,WR,Meridian,ID,USA
+5151884,Logan Lisherness,Washington,74,230,1,LB,Puyallup,WA,USA
+5151885,Parker Cross,Washington,74,284,1,OL,Seattle,WA,USA
+5151886,Jacob Mason,Washington,74,245,1,DE,Ferndale,WA,USA
+5151887,Roice Cleeland,Washington,74,297,1,OL,Vancouver,WA,USA
+5151888,Aidan Anderson,Washington,76,319,1,OL,Olympia,WA,USA
+5151889,Habib Bello,Washington,74,310,1,DL,Bellingham,WA,USA
+5151890,Troy Petz,Washington,73,193,2,P,Lynden,WA,USA
