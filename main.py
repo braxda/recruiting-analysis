@@ -98,6 +98,11 @@ def compare_ids(roster_df, recruits_df):
     print("match found between roster id and athlete id")
     print(athlete_match)
 
+    # now check the names of the players who didnt match, i have a suspiscision its going to be players that transferred to the school
+    unmatched_ids = roster_df[~roster_df['id'].isin(athlete_match)]
+    print("players with no match in athlete ids")
+    print(unmatched_ids[['name', 'id']].sort_values('name'))
+
 def main():
     teams_api, recruiting_api = api_setup()
     team = "Michigan"
