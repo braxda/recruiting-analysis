@@ -1,46 +1,62 @@
-import pandas as pd
+import pandas
 import cfbd
+import pandas as pd
 from cfbd.rest import ApiException
 from config import API_KEY
 
-#setup api connect
-configuration = cfbd.Configuration()
-configuration.api_key['Authorization'] = API_KEY
-configuration.api_key_prefix['Authorization'] = 'Bearer'
-recruiting_api = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
+def api_setup():
+    """ configure the players and recruiting APIs"""
+    configuration = cfbd.Configuration()
+    configuration.api_key['Authorization'] = API_KEY
+    configuration.api_key_prefix['Authorization'] = 'Bearer'
 
-try:
-    recruits = recruiting_api.get_recruiting_players(
-        year = 2023,
-        team = "Michigan"
-    )
+    recruiting_api = cfbd.RecruitingApi(cfbd.ApiClient(configuration))
+    players_api = cfbd.PlayersApi(cfbd.ApiClient(configuration))
 
-    if recruits:
-        print(f"Recruits found: {len(recruits)}")
 
+    return players_api, recruiting_api
+
+def get_recruits(recruiting_api, team):
+    """this endpoint contains data on player star ratings"""
+    try:
         recruit_list = []
 
-        for recruit in recruits:
-            recruit_info = {
-            "name": recruit.name,
-            "position": recruit.position,
-            "year": recruit.year,
-            "stars": recruit.stars,
-            "Team": recruit.committed_to,
-            "height": recruit.height,
-            "weight": recruit.weight,
-            "city": recruit.city,
-            "state": recruit.state_province,
-            "country": recruit.country,
-            "high_school": recruit.school
-            }
-            recruit_list.append(recruit_info)
+        for year in range (2018, 2024):
+            recruits = recruiting_api.get_recruiting_players(
+                year=year,
+                team=team
+            )
+            if not recruits:
+                print(f"Recruits for {team}, {year} could not be found")
+                continue
 
-            #create dataframe for recruit list
-            df = pd.DataFrame(recruit_list)
+            for recruit in recruits:
+                recruit_info = {
+                "name": recruit.name,
+                "stars": recruit.stars
+                }
+                recruit_list.append(recruit_info)
 
-        print("\n Michigan 2023 Recruits:")
+        df = pd.DataFrame(recruit_list)
         print(df)
+        return df
 
-except ApiException as e:
-    print(f"Error: {e}")
+    except ApiException as e:
+        print(f"Error getting recruiting data for {team}: {e}")
+        return pd.DataFrame()
+
+def main():
+    player_api, recruiting_api = api_setup()
+    team = "Michigan"
+    df = get_recruits(recruiting_api, team)
+
+if __name__ == "__main__":
+    main()
+
+#def get_roster
+    # collect all other relevant player info for roster
+    # create dataframe for roster list
+   # df = pandas.DataFrame()
+
+
+# were gonna have to do some data cleaning and merging
