@@ -6,6 +6,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 
 ## Data Source
 - College Football Data API (CFBD)
+- 247sports.com for star ratings
 
 ## Technologies Used
 - Python
@@ -17,4 +18,11 @@ This project uses Python to analyze geographical distribution of recruits, recru
 ## Setup
 1. Clone this repository
 2. Install required packages:
-   pip install -r requirements.txt
+   pip install -r requirements.txt***********UPDATE THIS LATER
+
+## Process
+1. Data collection via cfbd api and 247sports.com
+   a. Requested roster data from cfbd and player rating data from 247sports.com
+   b. Hardcoded rating data into csvs from main.py
+2. Geolocate players' hometowns 
+3. 
