@@ -48,7 +48,6 @@ def get_recruits(recruiting_api, team):
                 recruit_list.append(recruit_info)
 
         df = pd.DataFrame(recruit_list)
-        print(df)
         return df
 
     except ApiException as e:
@@ -66,6 +65,7 @@ def get_roster(teams_api, team, year):
         )
         for player in roster:
             player_info = {
+            "id": player.id,
             "name": player.first_name + " " + player.last_name,
             "team": player.team,
             "recruit_id": player.recruit_ids
@@ -73,11 +73,30 @@ def get_roster(teams_api, team, year):
             roster_list.append(player_info)
 
         df = pd.DataFrame(roster_list)
-        print(df)
         return df
     except ApiException as e:
         print(f"Error getting roster data for {team}: {e}")
         return pd.DataFrame()
+
+def compare_ids(roster_df, recruits_df):
+    id_match = pd.merge(
+        roster_df[['name', 'id']],
+        recruits_df[['name', 'id']],
+        on = 'id',
+        suffixes=('_roster', '_recruits')
+    )
+    print("matches found in roster id and recruiting id")
+    print(id_match)
+
+    athlete_match = pd.merge(
+        roster_df[['name', 'id']],
+        recruits_df[['name', 'athlete_id']],
+        left_on='id',
+        right_on='athlete_id',
+        suffixes=('_roster', '_recruit')
+    )
+    print("match found between roster id and athlete id")
+    print(athlete_match)
 
 def main():
     teams_api, recruiting_api = api_setup()
@@ -85,6 +104,8 @@ def main():
     year = 2023
     recruits_df = get_recruits(recruiting_api, team)
     roster_df = get_roster(teams_api, team, year)
+
+    compare_ids(roster_df, recruits_df)
 
 if __name__ == "__main__":
     main()
