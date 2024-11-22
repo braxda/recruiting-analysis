@@ -78,30 +78,26 @@ def get_roster(teams_api, team, year):
         print(f"Error getting roster data for {team}: {e}")
         return pd.DataFrame()
 
-def compare_ids(roster_df, recruits_df):
-    id_match = pd.merge(
-        roster_df[['name', 'id']],
-        recruits_df[['name', 'id']],
-        on = 'id',
-        suffixes=('_roster', '_recruits')
-    )
-    print("matches found in roster id and recruiting id")
-    print(id_match)
+def compare_names(roster_df, recruits_df):
+    """match players based on names"""
+    # clean name data
+    roster_df['clean_name'] = roster_df['name'].str.lower().str.strip()
+    recruits_df['clean_name'] = recruits_df['name'].str.lower().str.strip()
 
-    athlete_match = pd.merge(
-        roster_df[['name', 'id']],
-        recruits_df[['name', 'athlete_id']],
-        left_on='id',
-        right_on='athlete_id',
-        suffixes=('_roster', '_recruit')
+    # look for exact matches
+    exact_match = pd.merge(
+        roster_df[['name', 'id', 'clean_name']],
+        recruits_df[['name', 'athlete_id', 'clean_name', 'stars', 'committed_to']],
+        on = 'clean_name',
+        suffixes = ('_roster', '_recruit')
     )
-    print("match found between roster id and athlete id")
-    print(athlete_match)
+    print(exact_match[['name_roster', 'name_recruit', 'stars', 'committed_to']])
 
     # now check the names of the players who didnt match, i have a suspiscision its going to be players that transferred to the school
-    unmatched_ids = roster_df[~roster_df['id'].isin(athlete_match)]
-    print("players with no match in athlete ids")
-    print(unmatched_ids[['name', 'id']].sort_values('name'))
+    matched_players = exact_match['clean_name']
+    unmatched_players = roster_df[~roster_df['clean_name'].isin(matched_players)]
+    print("players with no match in name")
+    print(unmatched_players[['name']].sort_values('name'))
 
 def main():
     teams_api, recruiting_api = api_setup()
@@ -110,7 +106,7 @@ def main():
     recruits_df = get_recruits(recruiting_api, team)
     roster_df = get_roster(teams_api, team, year)
 
-    compare_ids(roster_df, recruits_df)
+    compare_names(roster_df, recruits_df)
 
 if __name__ == "__main__":
     main()
