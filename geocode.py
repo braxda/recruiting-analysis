@@ -2,9 +2,16 @@ import pandas as pd
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import sqlalchemy
-import time
 
-df = pd.read_csv('michigan_roster_2023.csv')
+team_files = [
+    'michigan_roster_2023.csv',
+    'washington_roster_2023.csv',
+    'texas_roster_2023.csv',
+    'alabama_roster_2023.csv'
+]
+
+# dataframe will contain all teams
+combined_df = pd.DataFrame()
 
 geolocator = Nominatim(user_agent='cfb_roster_analysis')
 geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
@@ -39,8 +46,24 @@ def get_coordinates(row):
         print(f"Error geocoding {address}: {e}")
         return pd.Series([None, None])
 
-print("Processing players...")
-df[['latitude', 'longitude']] = df.apply(get_coordinates, axis=1)
+#process each team file
+for file in team_files:
+    try:
+        print(f"Processing {file}...")
+        team_df = pd.read_csv(file)
 
-df.to_csv('michigan_geocode.csv', index=False)
+        team_name = file.replace('_roster_2023.csv', '').title()
+        team_df['team'] = team_name
+
+        print(f"Added {len(team_df)} players from {team_name}")
+        combined_df = pd.concat([combined_df, team_df], ignore_index=True)
+    except FileNotFoundError:
+        print(f"Error: Could not find file {file}")
+        continue
+    except Exception as e:
+        print(f"Error processing {file}: {e}")
+
+combined_df[['latitude', 'longitude']] = combined_df.apply(get_coordinates, axis=1)
+
+combined_df.to_csv('playoff_rosters_geocode.csv', index=False)
 print("Finished")
