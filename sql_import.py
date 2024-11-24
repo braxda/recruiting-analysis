@@ -1,6 +1,5 @@
 import pandas as pd
 
-
 df = pd.read_csv('playoff_rosters_geocode.csv')
 
 def clean_data():
@@ -15,11 +14,11 @@ def clean_data():
     cleaned_df['formatted_height'] = None
     for index, row in cleaned_df.iterrows():
         if pd.isna(row['height']) or row['height'] == 0:
-            cleaned_df['formatted_height'][index] = None
+            cleaned_df.loc[index, 'formatted_height'] = None
         else:
             feet = int(row['height'] // 12)
             remaining_inches = int(row['height'] % 12)
-            cleaned_df['formatted_height'][index] = f"{feet}'{remaining_inches}\""
+            cleaned_df.loc[index, 'formatted_height'] = f"{feet}'{remaining_inches}\""
 
     return cleaned_df
 
