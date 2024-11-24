@@ -1,5 +1,5 @@
 import pandas as pd
-import sqlalchemy
+
 
 df = pd.read_csv('playoff_rosters_geocode.csv')
 
