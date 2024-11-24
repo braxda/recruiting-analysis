@@ -16,13 +16,11 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - GitHub for version control
 
 ## Setup
-1. Clone this repository
-2. Install required packages:
-   pip install -r requirements.txt***********UPDATE THIS LATER
+- pip install -r requirements.txt***********UPDATE THIS LATER
 
 ## Process
 1. Data collection via cfbd api and 247sports.com
    a. Requested roster data from cfbd and player rating data from 247sports.com
    b. Hardcoded rating data into csvs from main.py
-2. Geolocate players' hometowns 
-3. 
+2. Geolocate players' hometowns with geopy
+3. Basic data cleaning before importing to Postgres
