@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('roster_csvs/playoff_rosters_geocode.csv')
+df = pd.read_csv('roster_csvs/hardcoded_stars.csv')
 
 def clean_data():
     cleaned_df = df.copy()
