@@ -1,5 +1,5 @@
 -- Show physical attributes and star ranking by position group for each team
--- Order by star rating to see how teams prioritized positions
+-- Order by star rating to see how teams prioritize positions
 
 SELECT
   team,
