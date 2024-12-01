@@ -1,5 +1,5 @@
 --This query will show you the highest rated player for each position for each team.
---Great for seeing what position each team had star players at
+--Nice for seeing at which position each team had star players
 SELECT p.name, p.position, p.team, p.stars
 FROM players p
 INNER JOIN (
