@@ -25,7 +25,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 ## GIS Setup
 - Download .qgz file from gis/qgis directory
 - Download .gpkg file from gis/data directory
-- Open .qgz file and add .gpkg to view layers
+- Open .qgz file and set up a connection to the .gpkg to view layers
 
 ## Process
 1. Data collection via cfbd api and 247sports.com (main.py)
