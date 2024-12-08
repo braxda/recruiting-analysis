@@ -3,6 +3,7 @@ import pandas as pd
 from cfbd.rest import ApiException
 from config import API_KEY
 
+
 def api_setup():
     """ configure the teams api"""
     configuration = cfbd.Configuration()
@@ -12,27 +13,28 @@ def api_setup():
     teams_api = cfbd.TeamsApi(cfbd.ApiClient(configuration))
     return teams_api
 
+
 def get_roster(teams_api, team, year):
     """"pull relevant roster data for 2023. recruit_ids are incomplete"""
     try:
         roster_list = []
         print(f"getting {team} roster...")
         roster = teams_api.get_roster(
-            team = team,
-            year = year
+            team=team,
+            year=year
         )
         for player in roster:
             player_info = {
-            "id": player.id,
-            "name": player.first_name + " " + player.last_name,
-            "team": player.team,
-            "height": player.height,
-            "weight": player.weight,
-            "year": player.year,
-            "position": player.position,
-            "hometown": player.home_city,
-            "state": player.home_state,
-            "country": player.home_country,
+                "id": player.id,
+                "name": player.first_name + " " + player.last_name,
+                "team": player.team,
+                "height": player.height,
+                "weight": player.weight,
+                "year": player.year,
+                "position": player.position,
+                "hometown": player.home_city,
+                "state": player.home_state,
+                "country": player.home_country,
             }
             roster_list.append(player_info)
 
@@ -42,6 +44,7 @@ def get_roster(teams_api, team, year):
     except ApiException as e:
         print(f"Error getting roster data for {team}: {e}")
         return pd.DataFrame()
+
 
 def main():
     teams_api = api_setup()
@@ -55,13 +58,6 @@ def main():
             roster_df.to_csv(filename, index=False)
             print(f"saved {filename}")
 
+
 if __name__ == "__main__":
     main()
-
-#def get_roster
-    # collect all other relevant player info for roster
-    # create dataframe for roster list
-   # df = pandas.DataFrame()
-
-
-# were gonna have to do some data cleaning and merging
