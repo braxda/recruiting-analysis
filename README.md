@@ -38,8 +38,13 @@ This project uses Python to analyze geographical distribution of recruits, recru
 4. Ran SQL queries on data for insights on each school's ability to recruit various player types from across the world (sql directory)
 5. Imported layer data into a GIS project
    i. Format layer data, created calculated fields that will be used for analysis
+
    ii. Connected players to their schools with geodesic lines
+
    iii. Created 1-hour isochrones for each school
+
    iv. Create heatmap for recruits country-wide
+
    v. Found the mean distance of recruits from each school
+
    vi. Used the mean distance to create standard deviation ellipses showing how each school recruited
