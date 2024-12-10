@@ -8,6 +8,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - College Football Data API (CFBD)
 - 247sports.com for star ratings
 - Nominatim for geocoding
+- -OpenRouteService for isochrones
 
 ## Technologies Used
 - IDE - PyCharm
@@ -30,11 +31,15 @@ This project uses Python to analyze geographical distribution of recruits, recru
 
 ## Process
 1. Data collection via cfbd api and 247sports.com (main.py)
-   a. Requested roster data from cfbd and player rating data from 247sports.com
-   b. Hardcoded rating data into csvs from main.py
+   i. Requested roster data from cfbd and player rating data from 247sports.com
+   ii. Hardcoded rating data into csvs from main.py
 2. Geolocate players' hometowns with geopy (geocode.py)
 3. Basic data cleaning before importing to Postgres (sql_import.py)
 4. Ran SQL queries on data for insights on each school's ability to recruit various player types from across the world (sql directory)
 5. Imported layer data into a GIS project
    i. Format layer data, created calculated fields that will be used for analysis
-   ii. Obtained API Key
+   ii. Connected players to their schools with geodesic lines
+   iii. Created 1-hour isochrones for each school
+   iv. Create heatmap for recruits country-wide
+   v. Found the mean distance of recruits from each school
+   vi. Used the mean distance to create standard deviation ellipses showing how each school recruited
