@@ -16,6 +16,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - PostgreSQL for running queries and managing data
 - GitHub for version control
 - QGIS for geospatial analysis
+- CartoDB Positron for basemap in GIS project
 
 ## Python Setup
 - pip install -r requirements.txt***********UPDATE THIS LATER
@@ -34,4 +35,6 @@ This project uses Python to analyze geographical distribution of recruits, recru
 2. Geolocate players' hometowns with geopy (geocode.py)
 3. Basic data cleaning before importing to Postgres (sql_import.py)
 4. Ran SQL queries on data for insights on each school's ability to recruit various player types from across the world (sql directory)
-5. Imported data into a .gpkg and created GIS project file to visualize data
+5. Imported layer data into a GIS project
+   i. Format layer data, created calculated fields that will be used for analysis
+   ii. Obtained API Key

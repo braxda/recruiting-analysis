@@ -1,13 +1,13 @@
 import cfbd
 import pandas as pd
 from cfbd.rest import ApiException
-from config import API_KEY
+from config import CFBD_API_KEY
 
 
 def api_setup():
     """ configure the teams api"""
     configuration = cfbd.Configuration()
-    configuration.api_key['Authorization'] = API_KEY
+    configuration.api_key['Authorization'] = CFBD_API_KEY
     configuration.api_key_prefix['Authorization'] = 'Bearer'
 
     teams_api = cfbd.TeamsApi(cfbd.ApiClient(configuration))
