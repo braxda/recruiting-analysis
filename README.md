@@ -54,4 +54,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 
    viii. Use vector analysis tools to find the per team count of players, average star ratings, and totals stars for each region
 
-   ix. Created a competition metric based on those numbers to show which schools were competing for recruits in which regions
+   ix. Created a competition metric based on those numbers to show which metro regions were most competitive 
+       a. formula: competition_metric = (teams_per_metro/4) * (metro_total_players) * (metro_avg_stars/3)
+
+   x. Created a success metric showing how successful each team was at recruiting in each metro
