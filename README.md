@@ -8,7 +8,8 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - College Football Data API (CFBD)
 - 247sports.com for star ratings
 - Nominatim for geocoding
-- -OpenRouteService for isochrones
+- OpenRouteService for isochrones
+- https://www2.census.gov/geo/tiger/TIGER2023/CBSA/ for Metropolitan area layer
 
 ## Technologies Used
 - IDE - PyCharm
@@ -48,3 +49,9 @@ This project uses Python to analyze geographical distribution of recruits, recru
    v. Found the mean distance of recruits from each school
 
    vi. Used the mean distance to create standard deviation ellipses showing how each school recruited
+
+   vii. Use census data to join players into metropolitan regions
+
+   viii. Use vector analysis tools to find the per team count of players, average star ratings, and totals stars for each region
+
+   ix. Created a competition metric based on those numbers to show which schools were competing for recruits in which regions
