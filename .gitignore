@@ -13,3 +13,9 @@ config.py
 *.gpkg-shm
 *.gpkg-wal
 *.qmd
+
+# Tableau files
+*.twbr
+*.hyper
+*.tde
+*.log
