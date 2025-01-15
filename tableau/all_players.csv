@@ -516,3 +516,5 @@ fid,id,name,team,height,weight,year,position,hometown,state,country,latitude,lon
 "515","5159918",Billy Roby,Alabama,71,245,"2",OL,Huntsville,AL,USA,34.729847,-86.585901,"5'11""","0"
 "516","5159919",Lane Whisenhunt,Alabama,74,285,"2",LB,Vestavia Hills,AL,USA,33.448799,-86.787949,"6'2""","0"
 "517","5159920",Reed Harradine,Alabama,75,185,"1",PK,Birmingham,AL,USA,33.520682,-86.802433,"6'3""","0"
+"518","4594984",Tavierre Dunlap,Michigan,72,229,"4",RB,Del Valle,TX,USA,NULL,NULL,"6'0""","3"
+"519","4696746",Sam Willoughby,Alabama,70,165,"4",WR,NULL,AL,USA,NULL,NULL,"5'10""","0"
