@@ -18,4 +18,5 @@ config.py
 *.twbr
 *.hyper
 *.tde
-*.log
+gis/outputs/player_metros.gpkg
+tableau/player_metros.gpkg
