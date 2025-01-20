@@ -19,6 +19,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - GitHub for version control
 - QGIS for geospatial analysis
 - CartoDB Positron for basemap in GIS project
+- Tableau for data visualization
 
 ## Python Setup
 - pip install -r requirements.txt***********UPDATE THIS LATER
@@ -58,3 +59,4 @@ This project uses Python to analyze geographical distribution of recruits, recru
        a. formula: competition_metric = (teams_per_metro/4) * (metro_total_players) * (metro_avg_stars/3)
 
    x. Created a success metric showing how successful each team was at recruiting in each metro
+6. Imported GIS data into Tableau to create recruiting visualizations for each team
