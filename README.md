@@ -10,6 +10,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - Nominatim for geocoding
 - OpenRouteService for isochrones
 - https://www2.census.gov/geo/tiger/TIGER2023/CBSA/ for Metropolitan area layer
+- HTML5UP.net - Photon for HTML template
 
 ## Technologies Used
 - IDE - PyCharm
@@ -32,9 +33,7 @@ This project uses Python to analyze geographical distribution of recruits, recru
 - Open .qgz file and set up a connection to the .gpkg to view layers
 
 ## Process
-1. Data collection via cfbd api and 247sports.com (main.py)
-   i. Requested roster data from cfbd and player rating data from 247sports.com
-   ii. Hardcoded rating data into csvs from main.py
+1. Player data via cfbd api and star rating data via 247sports.com (main.py)
 2. Geolocate players' hometowns with geopy (geocode.py)
 3. Basic data cleaning before importing to Postgres (sql_import.py)
 4. Ran SQL queries on data for insights on each school's ability to recruit various player types from across the world (sql directory)
@@ -60,3 +59,4 @@ This project uses Python to analyze geographical distribution of recruits, recru
 
    x. Created a success metric showing how successful each team was at recruiting in each metro
 6. Imported GIS data into Tableau to create recruiting visualizations for each team
+7. Downloaded HTML template off of HTML5UP and imported into IDE and repository for editing
