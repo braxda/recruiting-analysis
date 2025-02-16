@@ -60,3 +60,4 @@ This project uses Python to analyze geographical distribution of recruits, recru
    x. Created a success metric showing how successful each team was at recruiting in each metro
 6. Imported GIS data into Tableau to create recruiting visualizations for each team
 7. Downloaded HTML template off of HTML5UP and imported into IDE and repository for editing
+8. Imported data into ArcGIS Online for webpage display. Ran into issues displaying my QGIS project as a webmap with the proper symbology.
