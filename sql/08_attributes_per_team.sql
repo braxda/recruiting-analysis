@@ -13,6 +13,7 @@ SELECT
   COUNT(*) as players,
   ROUND(AVG(weight), 1) as avg_weight,
   ROUND(AVG(height), 1) as avg_height,
+  ROUND(AVG(year), 1) as avg_experience,
   ROUND(AVG(stars), 1) as avg_stars
 FROM players
 GROUP BY team,
